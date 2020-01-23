@@ -37,7 +37,7 @@ burnin = 40000;
 
 %set the part of the distribution you would like to plot, e.g. for the top 
 %1000 most likely slip histories, pick 1000. For the full distribution, 
-%write 'end'
+%write th number of models minus the burnin (e.g. 200k - 40k - write 160k)
 age_distribution = 10000;
 
 %set file names
