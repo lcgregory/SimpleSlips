@@ -17,6 +17,16 @@ SimpleSlips_PlotTraces.m
 This is a function that shows the trace of the model, the density of each parameter, and statistical measurements for each parameter, calculated excluding the burnin that you specifiy in running the function. Convergence is indicated by parameters returning to the same range in values on the lefthand plots.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Confidence interval
+Both of these scripts plot the confidence interval of your distribution (minus a burnin). These lines could be plotted on top of other plots (e.g. the stairs.m) if you want to show both some of the detail and the range of the full accepted distribution. 
+
+%smooth_confidence.m
+This plots bounds on the distribution of the model as a high and low percentile. It is binned such that the percentile is calculated for age at each step in the slip. This code plots a smooth distribution in age vs time. The mean is also plotted (default red) and the most likely slip history (blue). 
+
+%stepped_confidence.m
+The same as the smooth confidence script, but the distribution is plotted as steps rather than smooth lines. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 datafits_simpleslips
 
 % plot_fits_data_stairs_single.m
