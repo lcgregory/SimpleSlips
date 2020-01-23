@@ -9,7 +9,7 @@ Each plotting script or function can run as a standalone routine. You need to fi
 Take care with what you are plotting - double check that it is what you expected and don't over-interpret the results (e.g. your most likely slip history is not very representative of the potential exposure histories your site has experienced, but it is informative to see a pattern of slip that fits the data well). We have tried to develop plots that reflect the simplicity of our modelling.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-plot_stars.m
+plot_stairs.m
 This shows the most likely slip histories plotted as individual lines, rather than as a density of lines (as in histo_plot). You can choose how many models to plot in the parula colour scale, and how many models to plot in grey behind it. For example, you may want to show the most likely 1000 slip histories in colour, on top of the 10,000 most likely histories in grey. It takes a lot of time to plot this many lines, so more than 10,000 will run slowly, but it is possible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,7 +38,7 @@ sliprate_calc
 *To be used with caution. Please read Gregory et al. (submitted), Goodall et al. (submitted), and Gregory et al. (in prep) to understand what assumptions are important for this plot. *
 
 % slips.py
-This is a python script written by Tim Craig (University of Leeds) to calculate the average slip rate in bins in time (decided by the user), which can then be plotted as slip rate vs. time (see plot_sliprate.m). The aveage is taken from a suite of models input by the user - see figure in the supplement of Gregory et al. (submitted) for a graphical representation. You have to run it in python, which is installed on most linux machines. It requires a formatted version of the sliphistory.out file, which is produced from:
+This is a python script written by Tim Craig (University of Leeds) to calculate the mean slip rate in bins in time (decided by the user), which can then be plotted as slip rate vs. time (see plot_sliprate.m). The mean is taken from a suite of models input by the user - see figure in the supplement of Gregory et al. (submitted) for a graphical representation. You have to run it in python, which is installed on most linux machines. It requires a formatted version of the sliphistory.out file, which is produced from:
 
 % setup.m
 Setup for slips.py
