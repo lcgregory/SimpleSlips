@@ -10,11 +10,11 @@ Take care with what you are plotting - double check that it is what you expected
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 plot_stairs.m
-This shows the most likely slip histories plotted as individual lines, rather than as a density of lines (as in histo_plot). You can choose how many models to plot in the parula colour scale, and how many models to plot in grey behind it. For example, you may want to show the most likely 1000 slip histories in colour, on top of the 10,000 most likely histories in grey. It takes a lot of time to plot this many lines, so more than 10,000 will run slowly, but it is possible.
+This shows the most likely slip histories plotted as individual lines, rather than as a density of lines (as in histo_plot). You can choose how many models to plot in the parula colour scale, and how many models to plot in grey behind it. For example, you may want to show the most likely 1000 slip histories in colour, on top of the 10,000 most likely histories in grey. It takes a lot of time to plot this many lines, so more than 10,000 will run slowly, but it is possible. This plot should be saved with a higher resolution (in export settings, e.g. 600 dpi), due to the nature of having 10k lines plotted.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SimpleSlips_PlotTraces.m
-This is a function that shows the trace of the model, the density of each parameter, and statistical measurements for each parameter, calculated excluding the burnin that you specifiy in running the function. Convergence is indicated by parameters returning to the same range in values on the lefthand plots.
+This is a function that shows the trace of the model, the density of each parameter, and statistical measurements for each parameter, calculated excluding the burnin that you specifiy in running the function. Convergence is indicated by parameters returning to the same range in values on the lefthand plots. A 'dot' plot is also produced for elapsed time and scarp age vs likelihood and RMSw, respectively. This plot should be saved with a higher resolution (in export settings, e.g. 600 dpi), due to the nature of having 100k's of points plotted.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Confidence interval
