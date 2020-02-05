@@ -50,7 +50,9 @@ ratesfile = 'output_slip_averages_CAP.dat';
 %set slip number for calculation. This counts back from the most recent
 %event (which is slipno = 1), the penultimate event is slipno = 2, etc. The
 %code will also output the average slip rate for the entire distribution,
-%calculated by dividing the scarp age by the height of the scarp.
+%calculated by dividing the scarp age by the height of the scarp. The
+%calculation works out the rate from halfway in between each slip number
+%(e.g. that is why there are two required).
 
 slipno = 6;
 slipno2 = 5;
@@ -61,20 +63,14 @@ slipno2 = 5;
 
 today = 1;
 
-
-
 %% read in sliphistory and slip rate files and assign values
 
 sliphistory = load(sliphistoryfile);
 slip=sliphistory(1,4:end);
-age=sliphistory(burnin:end,4:end); 
+age=sliphistory(burnin:end,:); 
+SizeOfFile = size(age);
+maxmodel = SizeOfFile;
 
-%slip rate and model numbers
- slips = load(ratesfile);
- timeS = slips(:,1);
- rateS = slips(:,2);
- modeldensity = slips(:,4) ./ slips(1,7);
- 
 % Maxlik calculation
 % Sort Matrix based on likelihood and take the desired age distribution
 [values, order] = sort(age(:,1));
@@ -82,6 +78,12 @@ age = age(order,:);
 age = flipud(age);
 age = age(1:age_distribution,4:end);
 
+%slip rate and model numbers
+ slips = load(ratesfile);
+ timeS = slips(:,1);
+ rateS = slips(:,2);
+ modeldensity = slips(:,4) ./ slips(1,7);
+ 
 %Assign the scarp age and ET columns
 scarpage = age(:,1);
 ET = age(:,end-1);
