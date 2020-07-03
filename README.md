@@ -3,7 +3,7 @@ A simple Bayesian inference MCMC code for modelling cosmogenic data from bedrock
 
 This code is based on the forward model developed in Schlagenhauf et al., 2010, 'modelscarp'. Their forward model calculates the 36Cl concentration that would result from a user-defined slip history.
 
-The MCMC code generates potential slip histories, using a Bayesian-influened reversible jump Markov Chanin Monte Carlo approach to sample the posterior distribution. The accepted slip histories are output as an age arrary (with 'slip' as the top line of the array), with details of the liklihood and fit to the data for each model.
+The MCMC code was developed by Leo Zijerveld, Patience Cowie, and Laura Gregory, first publiched in Cowie et al., 2017. The code published here has been modified to run faster, and with more flexibility in setting up the priors, additional scripts for calculating the posterior probability, and additional plotting scripts. The MCMC code generates potential slip histories, using a Bayesian-influened reversible jump Markov Chanin Monte Carlo approach to sample the posterior distribution. The accepted slip histories are output as an age arrary (with 'slip' as the top line of the array), with details of the liklihood and fit to the data for each model.
 
 To run the code, download SimpleSlips and keep the same file structure on your machine. You must supply the site-specific details in the same format as required by the modelscrap code (described in Schlagenhauf et al., 2010) namely the datacolluvium.txt, datamagfield.txt, and datarock.txt. MCMC_Flex_CPSS.m should be updated with site details and a few parameters need to be set. This script is run in Matlab, and it takes ~24 hours to run 200k iterations (recommended). 
 
